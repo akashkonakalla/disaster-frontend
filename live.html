@@ -39,7 +39,7 @@
 
   <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
   <script>
-    const socket = io('http://localhost:5000');
+    const socket = io('https://disaster-backend-rdau.onrender.com');
     const feed = document.getElementById('feed');
     const disasterList = document.getElementById('disaster-list');
     let currentDisasterId = null;
@@ -56,7 +56,7 @@
 
     async function loadDisasters() {
       try {
-        const res = await fetch('http://localhost:5000/disasters');
+        const res = await fetch('https://disaster-backend-rdau.onrender.com/disasters');
         const disasters = await res.json();
         disasterList.innerHTML = '';
         if (disasters.length === 0) {
@@ -80,7 +80,7 @@
     async function selectDisaster(id) {
       currentDisasterId = id;
       try {
-        const res = await fetch(`http://localhost:5000/socialMedia/${id}`);
+        const res = await fetch(`https://disaster-backend-rdau.onrender.com/socialMedia/${id}`);
         const posts = await res.json();
         renderFeed(posts);
       } catch {
@@ -102,7 +102,7 @@
     }
 
     async function loadResources() {
-      const res = await fetch('http://localhost:5000/resources');
+      const res = await fetch('https://disaster-backend-rdau.onrender.com/resources');
       const resources = await res.json();
       const list = document.getElementById('resource-list');
       list.innerHTML = '';
@@ -114,7 +114,7 @@
     }
 
     async function loadVerifiedReports() {
-      const res = await fetch('http://localhost:5000/reports');
+      const res = await fetch('https://disaster-backend-rdau.onrender.com/reports');
       const reports = await res.json();
       const list = document.getElementById('verified-reports');
       list.innerHTML = '';
@@ -131,7 +131,7 @@
     }
 
     async function loadOfficialUpdates() {
-      const res = await fetch('http://localhost:5000/official-updates');
+      const res = await fetch('https://disaster-backend-rdau.onrender.com/official-updates');
       const updates = await res.json();
       const list = document.getElementById('official-updates');
       list.innerHTML = '';

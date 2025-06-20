@@ -55,7 +55,7 @@
       };
 
       try {
-        const response = await fetch('http://localhost:5000/resources', {
+        const response = await fetch('https://disaster-backend-rdau.onrender.com/resources', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(data)
@@ -76,7 +76,7 @@
 
     async function loadResources() {
       try {
-        const res = await fetch('http://localhost:5000/resources');
+        const res = await fetch('https://disaster-backend-rdau.onrender.com/resources');
         const resources = await res.json();
         existingResourcesEl.innerHTML = '';
 
